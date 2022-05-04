@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="source/icons/calc.ico" type="image/x-icon">
+    <title>CalcApp</title>
+</head>
+<body>
+    <div class="container">
+       <form onkeyup="if(event.code==='Enter')operate()">
+            <div class="display">
+                <input type="text" value="" onkeyup="handleEnteredData(this)">
+            </div>
+            <div class="buttons">
+                <div class="number symbol">
+                    <div onclick="clearDisplay()" class="btn" >C</div>
+                </div>
+                <div class="number symbol">
+                    <div onclick="changeValue()" class="btn" >+/-</div>
+                </div>
+                <div class="number symbol">
+                    <div onclick="percentage()" class="btn" >%</div>
+                </div>
+                <div class="number operation">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >&divide;</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >7</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >8</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >9</div>
+                </div>
+                <div class="number operation">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >x</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >4</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >5</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >6</div>
+                </div>
+                <div class="number operation">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >-</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >1</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >2</div>
+                </div>
+                <div class="number">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >3</div>
+                </div>
+                <div class="number operation">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >+</div>
+                </div>
+                <div class="number null">
+                    <div onclick="inputNmb(this.textContent)" class="btn" >0</div>
+                </div>
+                <div class="number">
+                    <div class="empty btn"></div>
+                </div>
+                <div class="number operation">
+                    <div data-value="=" onclick="operate()" class="btn" >=</div>
+                </div>
+                <input id="operate-handler" type="text" hidden value="false">
+                        
+
+            </div>
+
+
+       </form> 
+
+
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
