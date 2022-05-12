@@ -11,7 +11,7 @@
     <div class="container">
        <form onkeyup="if(event.code==='Enter')operate()">
             <div class="display">
-                <input type="text" value="" onkeyup="handleEnteredData(this)">
+                <input type="text" onkeydown="handleEnteredData(event)">
             </div>
             <div class="buttons">
                 <div class="number symbol">
@@ -84,3 +84,4 @@
     <script src="scripts/script.js"></script>
 </body>
 </html>
+

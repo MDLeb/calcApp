@@ -38,10 +38,23 @@ function clearDisplay() {
     document.querySelector(".display").querySelector("input").value = null;
 }
 function handleEnteredData(event) {
-    event.value = event.value.replace(/[^\d^'.'^'*'^'+'^'\-'^'/']/g,'');
-    if (actions[event.value.slice(-1)]) {
-        verificationMathematicalOperations(event.value, event.value.slice(-1), true);
+    let val = event.target.value;
+    let operations = [];
+    for (let operate in actions) {
+        operations.push(actions[operate]);
     }
+    if(operations.includes(val[val.length - 1]) && operations.includes(event.key)) {
+        console.log('++');
+        event.target.value = `${event.target.value.slice(0, (val.length - 1))}`;
+    }
+    // if (exp.test(val[val.length - 1]) && exp.test(event.key)) {
+    // //     verificationMathematicalOperations(event.value, event.value.slice(-1), true);
+    //     console.log('+++');
+    // }
+    // console.log(exp.test(val[val.length - 1]));
+    // console.log(exp.test(event.key))
+    // console.log('------');
+
 }
 function verificationMathematicalOperations(currentValue, btn, isKeyboard) {
     let lastSymbol = isKeyboard ? currentValue.slice(-2, -1) : currentValue.slice(-1);
